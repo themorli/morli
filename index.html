@@ -1,180 +1,180 @@
-```css
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарас Шевченко | Speaker & AI Transformation Expert</title>
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #0d1117;
-    color: #f3f4f6;
-    line-height: 1.7;
-}
+    <meta name="description"
+          content="Тарас Шевченко — эксперт по системному анализу, AI-native командам, цифровой трансформации и управлению знаниями. Спикер IT-конференций и автор практических мастер-классов.">
 
-.container {
-    width: min(1200px, 90%);
-    margin: auto;
-}
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background:
-            radial-gradient(circle at top right,
-                    rgba(0,255,255,0.12),
-                    transparent 35%);
-}
+<header class="hero">
+    <div class="container hero-content">
+        <div class="hero-photo">
+            <img src="avatar.jpg" alt="Тарас Шевченко">
+        </div>
 
-.hero-content {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 80px;
-    align-items: center;
-}
+        <div class="hero-text">
+            <div class="label">IT Speaker • System Analysis • AI Transformation</div>
 
-.hero-photo img {
-    width: 320px;
-    height: 320px;
-    border-radius: 24px;
-    object-fit: cover;
-    border: 1px solid #1f2937;
-}
+            <h1>
+                Тарас «Морли» Шевченко
+            </h1>
 
-.label {
-    color: #00d9ff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
+            <p class="subtitle">
+                Главный системный аналитик платформы ГенИИ.
+                Эксперт по системному анализу, продуктовой разработке,
+                AI-native командам и цифровой трансформации.
+            </p>
 
-h1 {
-    font-size: 64px;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
+            <div class="buttons">
+                <a href="#talks" class="btn">Доклады</a>
+                <a href="#contacts" class="btn btn-secondary">Пригласить</a>
+            </div>
+        </div>
+    </div>
+</header>
 
-.subtitle {
-    font-size: 22px;
-    color: #9ca3af;
-    max-width: 700px;
-}
+<section class="section">
+    <div class="container">
+        <h2>Обо мне</h2>
 
-.buttons {
-    margin-top: 40px;
-}
+        <div class="card">
+            <p>
+                Более 10 лет в IT: системный анализ, продуктовая разработка,
+                управление знаниями и цифровая трансформация.
+            </p>
 
-.btn {
-    display: inline-block;
-    padding: 16px 28px;
-    margin-right: 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    background: #00d9ff;
-    color: #000;
-    font-weight: 600;
-}
+            <p>
+                Помогаю компаниям строить эффективные AI-команды,
+                внедрять инженерные практики и выстраивать процессы принятия решений.
+            </p>
 
-.btn-secondary {
-    background: #1f2937;
-    color: white;
-}
+            <p>
+                Регулярно выступаю на конференциях, провожу мастер-классы
+                для технических руководителей, аналитиков и продуктовых команд.
+            </p>
+        </div>
+    </div>
+</section>
 
-.section {
-    padding: 100px 0;
-}
+<section class="section dark" id="expertise">
+    <div class="container">
+        <h2>Экспертиза</h2>
 
-.dark {
-    background: #111827;
-}
+        <div class="grid">
+            <div class="card">
+                <h3>Системный анализ</h3>
+                <p>Enterprise Architecture, Requirements Engineering, Knowledge Management.</p>
+            </div>
 
-h2 {
-    font-size: 42px;
-    margin-bottom: 50px;
-}
+            <div class="card">
+                <h3>AI-native Teams</h3>
+                <p>Изменение процессов разработки при появлении AI как участника delivery.</p>
+            </div>
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 30px;
-}
+            <div class="card">
+                <h3>Продуктовая разработка</h3>
+                <p>Создание продуктов с нуля и масштабирование процессов разработки.</p>
+            </div>
 
-.card {
-    background: #161b22;
-    border: 1px solid #232b36;
-    border-radius: 20px;
-    padding: 32px;
-}
+            <div class="card">
+                <h3>Коммуникации</h3>
+                <p>Переговоры, влияние без полномочий и управление сложными стейкхолдерами.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-.card h3 {
-    margin-bottom: 15px;
-}
+<section class="section" id="talks">
+    <div class="container">
+        <h2>Популярные доклады</h2>
 
-.talk-list {
-    display: grid;
-    gap: 30px;
-}
+        <div class="talk-list">
 
-.talk {
-    padding: 30px;
-    background: #161b22;
-    border-radius: 20px;
-    border-left: 4px solid #00d9ff;
-}
+            <div class="talk">
+                <h3>После Copilot. Как меняется команда, когда AI становится участником delivery</h3>
+                <p>
+                    Как AI меняет операционную модель разработки,
+                    роли команды и процессы принятия решений.
+                </p>
+            </div>
 
-.talk h3 {
-    margin-bottom: 15px;
-}
+            <div class="talk">
+                <h3>Демиург цифровой команды</h3>
+                <p>
+                    Политика выживания системного аналитика в эпоху AI.
+                </p>
+            </div>
 
-.logos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+            <div class="talk">
+                <h3>Когда AI прав, а команда нет</h3>
+                <p>
+                    Практические кейсы конфликта между человеческой экспертизой
+                    и рекомендациями моделей.
+                </p>
+            </div>
 
-.logos span {
-    padding: 14px 24px;
-    background: #161b22;
-    border-radius: 12px;
-}
+            <div class="talk">
+                <h3>Внутрикорпоративные переговоры в ИТ</h3>
+                <p>
+                    Мастер-класс для технических лидеров и аналитиков.
+                </p>
+            </div>
 
-.contact-links {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-}
+        </div>
+    </div>
+</section>
 
-.contact-links a {
-    color: #00d9ff;
-    text-decoration: none;
-}
+<section class="section dark">
+    <div class="container">
+        <h2>Конференции</h2>
 
-footer {
-    padding: 50px 0;
-    border-top: 1px solid #1f2937;
-    text-align: center;
-    color: #9ca3af;
-}
+        <div class="logos">
+            <span>TeamLead Conf</span>
+            <span>Analyst Days</span>
+            <span>IT Meetups</span>
+            <span>Internal Tech Talks</span>
+            <span>Community Events</span>
+        </div>
+    </div>
+</section>
 
-@media (max-width: 900px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+<section class="section" id="contacts">
+    <div class="container">
 
-    .hero-photo img {
-        width: 240px;
-        height: 240px;
-    }
+        <h2>Пригласить спикером</h2>
 
-    h1 {
-        font-size: 42px;
-    }
+        <div class="card contact-card">
 
-    .subtitle {
-        font-size: 18px;
-    }
-}
+            <p>
+                Открыт к участию в конференциях, митапах,
+                корпоративных мероприятиях и образовательных программах.
+            </p>
+
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/">LinkedIn</a>
+                <a href="https://github.com/">GitHub</a>
+                <a href="mailto:your@email.com">Email</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 Тарас Шевченко · Speaker · AI Transformation · System Analysis
+    </div>
+</footer>
+
+</body>
+</html>
 ```
