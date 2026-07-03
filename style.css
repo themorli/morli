@@ -347,6 +347,21 @@ h3 {
     color: #c4c8d4;
     margin-bottom: 20px;
 }
+.talk-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: auto;
+    padding-top: 24px;
+
+    color: #00d9ff;
+    font-weight: 600;
+}
+
+.talk-link:hover {
+    color: #7deeff;
+}
 
 /* ==========================
    THANKS
