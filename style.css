@@ -1,178 +1,81 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* TALKS */
 
-body {
-    font-family: "Inter", sans-serif;
-    background: #0d1117;
-    color: #f3f4f6;
-    line-height: 1.7;
-}
-
-.container {
-    width: min(1200px, 90%);
-    margin: auto;
-}
-
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background:
-            radial-gradient(circle at top right,
-                    rgba(0,255,255,0.12),
-                    transparent 35%);
-}
-
-.hero-content {
+.talks-grid {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 80px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit,
+            minmax(420px, 1fr));
+    gap: 40px;
 }
 
-.hero-photo img {
-    width: 320px;
-    height: 320px;
-    border-radius: 24px;
-    object-fit: cover;
-    border: 1px solid #1f2937;
-}
-
-.label {
-    color: #00d9ff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-h1 {
-    font-size: 64px;
-    line-height: 1.1;
-    margin-bottom: 30px;
-}
-
-.subtitle {
-    font-size: 22px;
-    color: #9ca3af;
-    max-width: 700px;
-}
-
-.buttons {
-    margin-top: 40px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 16px 28px;
-    margin-right: 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    background: #00d9ff;
-    color: #000;
-    font-weight: 600;
-}
-
-.btn-secondary {
-    background: #1f2937;
-    color: white;
-}
-
-.section {
-    padding: 100px 0;
-}
-
-.dark {
-    background: #111827;
-}
-
-h2 {
-    font-size: 42px;
-    margin-bottom: 50px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 30px;
-}
-
-.card {
+.talk-card {
     background: #161b22;
     border: 1px solid #232b36;
-    border-radius: 20px;
-    padding: 32px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all .3s ease;
 }
 
-.card h3 {
-    margin-bottom: 15px;
+.talk-card:hover {
+    transform: translateY(-8px);
+    border-color: #00d9ff;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.4);
 }
 
-.talk-list {
-    display: grid;
-    gap: 30px;
+.talk-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
 }
 
-.talk {
-    padding: 30px;
-    background: #161b22;
-    border-radius: 20px;
-    border-left: 4px solid #00d9ff;
+.talk-content {
+    padding: 28px;
 }
 
-.talk h3 {
-    margin-bottom: 15px;
+.talk-content h3 {
+    font-size: 30px;
+    margin-bottom: 16px;
 }
 
-.logos {
+.talk-content p {
+    color: #c5ced8;
+    line-height: 1.6;
+}
+
+.talk-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    margin-bottom: 18px;
 }
 
-.logos span {
-    padding: 14px 24px;
-    background: #161b22;
-    border-radius: 12px;
-}
-
-.contact-links {
-    display: flex;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.contact-links a {
+.talk-tags span {
+    background: rgba(0,217,255,.1);
+    border: 1px solid rgba(0,217,255,.25);
     color: #00d9ff;
-    text-decoration: none;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
 }
 
-footer {
-    padding: 50px 0;
-    border-top: 1px solid #1f2937;
-    text-align: center;
-    color: #9ca3af;
+.talk-note {
+    margin-top: 24px;
+    padding: 18px;
+    background: rgba(255,255,255,.04);
+    border-left: 3px solid #c61c3c;
+    border-radius: 12px;
+    color: #d7dce2;
 }
 
-@media (max-width: 900px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+.talk-card.featured {
+    grid-column: span 2;
+}
 
-    .hero-photo img {
-        width: 240px;
-        height: 240px;
-    }
+.talk-card.featured h3 {
+    font-size: 42px;
+}
 
-    h1 {
-        font-size: 42px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
+.talk-card.featured .talk-content {
+    padding: 36px;
 }
