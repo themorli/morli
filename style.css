@@ -323,7 +323,7 @@ h3 {
 
 .about-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
 }
 
@@ -347,22 +347,52 @@ h3 {
     color: #c4c8d4;
     margin-bottom: 20px;
 }
+
+/* ==========================
+   CARD CONTENT
+========================== */
+
+.card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-content h3 {
+    min-height: 60px;
+}
+
+.card-content p {
+    color: #c4c8d4;
+    flex: 1;
+}
+
+/* ==========================
+   VIDEO LINK
+========================== */
+
 .talk-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
 
-    margin-top: auto;
-    padding-top: 24px;
+    margin-top: 24px;
+    padding-top: 20px;
+
+    border-top: 1px solid #1d2330;
 
     color: #00d9ff;
     font-weight: 600;
+    font-size: 15px;
+
+    transition: all .25s ease;
 }
 
 .talk-link:hover {
     color: #7deeff;
+    transform: translateX(4px);
 }
-
 /* ==========================
    THANKS
 ========================== */
