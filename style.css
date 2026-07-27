@@ -94,13 +94,18 @@ nav a:hover {
 ========================== */
 
 .hero {
-    padding: 80px 0;
+    padding: 70px 0 90px;
+}
+
+/* Имя вынесено из сетки — тянется на всю ширину контейнера */
+.hero-head {
+    margin-bottom: 60px;
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns:
-        minmax(280px, 380px)
+        minmax(280px, 340px)
         minmax(400px, 1fr)
         minmax(180px, 220px);
     gap: 50px;
@@ -115,7 +120,7 @@ nav a:hover {
 
 .hero-photo img {
     width: 100%;
-    max-width: 380px;
+    max-width: 340px;
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 32px;
@@ -141,28 +146,29 @@ nav a:hover {
 }
 
 .hero-content {
-    max-width: 760px;
+    max-width: 100%;
 }
 
 h1 {
-    font-size: clamp(38px, 4.6vw, 60px);
-    line-height: 1.05;
-    margin-bottom: 14px;
-    letter-spacing: -.5px;
+    font-size: clamp(40px, 7.6vw, 112px);
+    line-height: .98;
+    margin-bottom: 18px;
+    letter-spacing: -2px;
+    text-wrap: balance;
 }
 
 /* Ник тем же кеглем, но приглушённый — имя и хэндл читаются как одно целое */
 h1 .handle {
-    color: #4d5566;
+    color: #3a4354;
     font-weight: 500;
 }
 
 .tagline {
-    font-size: clamp(20px, 2.2vw, 28px);
-    line-height: 1.3;
+    font-size: clamp(20px, 2.6vw, 34px);
+    line-height: 1.25;
     color: #00d9ff;
     font-weight: 600;
-    margin-bottom: 26px;
+    max-width: 900px;
 }
 
 .hero p {
@@ -732,6 +738,10 @@ footer p a {
 
 @media (max-width: 1200px) {
 
+    .hero-head {
+        margin-bottom: 40px;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -774,6 +784,10 @@ footer p a {
 
     .section {
         padding: 70px 0;
+    }
+
+    h1 {
+        letter-spacing: -1px;
     }
 
     .label {
