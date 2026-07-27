@@ -61,12 +61,14 @@ button,
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .logo .name {
     font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .logo .role {
@@ -123,22 +125,37 @@ nav a:hover {
 
 .label {
     color: #00d9ff;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 3px;
     margin-bottom: 24px;
+    /* «•» в Inter сидит низко — приподнимаем, чтобы строка не выглядела рваной */
+    white-space: nowrap;
+}
+
+.label .dot {
+    display: inline-block;
+    margin: 0 4px;
+    color: #2a3444;
+    transform: translateY(-1px);
 }
 
 h1 {
-    font-size: clamp(36px, 6vw, 64px);
-    line-height: 1.05;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.08;
     margin-bottom: 28px;
 }
 
 .hero p {
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: clamp(17px, 1.6vw, 20px);
     color: #c4c8d4;
     max-width: 700px;
+}
+
+.lead-sub {
+    margin-top: 18px;
+    font-size: 16px !important;
+    color: #8b94a7 !important;
 }
 
 .buttons {
@@ -207,10 +224,12 @@ h1 {
     font-size: 42px;
     font-weight: 800;
     color: #00d9ff;
+    line-height: 1.1;
 }
 
 .text {
     color: #8b94a7;
+    font-size: 15px;
 }
 
 /* ==========================
@@ -257,7 +276,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(30px, 4vw, 44px);
+    font-size: clamp(28px, 3.4vw, 40px);
     margin-bottom: 50px;
     line-height: 1.2;
 }
@@ -266,8 +285,57 @@ h3 {
     margin-bottom: 14px;
 }
 
+.section-lead {
+    color: #c4c8d4;
+    max-width: 800px;
+    margin-top: -25px;
+    margin-bottom: 45px;
+    font-size: 18px;
+}
+
 /* ==========================
-   TALKS
+   TIMELINE — «Где выступал»
+========================== */
+
+.timeline {
+    list-style: none;
+    border-top: 1px solid #1d2330;
+}
+
+.timeline li {
+    padding: 22px 0;
+    border-bottom: 1px solid #1d2330;
+    display: grid;
+    grid-template-columns: minmax(240px, 320px) 1fr;
+    gap: 30px;
+}
+
+.timeline .when {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.timeline .what {
+    color: #8b94a7;
+}
+
+.timeline .what a {
+    color: #00d9ff;
+}
+
+.timeline .what a:hover {
+    color: #7deeff;
+}
+
+@media (max-width: 900px) {
+    .timeline li {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+
+/* ==========================
+   TALKS / CARDS
 ========================== */
 
 .cards {
@@ -309,63 +377,47 @@ h3 {
 }
 
 .card-content h3 {
-    min-height: 60px;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 12px;
 }
 
+/*  БЫЛО: .card-content p { flex: 1; min-height: 80px }
+    Это правило растягивало КАЖДЫЙ абзац карточки.
+    С одним абзацем работало как распорка, с несколькими — ломало верстку. */
 .card-content p {
     color: #c4c8d4;
-    min-height: 80px;
+    margin-bottom: 14px;
 }
 
-/* ==========================
-   ABOUT
-========================== */
-
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+.card-content p:last-child {
+    margin-bottom: 0;
 }
 
-.about-card {
-    background: #11151f;
-    border: 1px solid #1d2330;
-    border-radius: 32px;
-    padding: 48px;
-}
-
-.about-card p {
-    color: #c4c8d4;
-    margin-bottom: 20px;
-}
-
-.topics {
-    list-style: none;
-}
-
-.topics li {
-    color: #c4c8d4;
-    margin-bottom: 20px;
-}
-
-/* ==========================
-   CARD CONTENT
-========================== */
-
-.card-content {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+/* Распорка теперь отдельным элементом, а не абзацем */
+.card-spacer {
     flex: 1;
+    min-height: 10px;
 }
 
-.card-content h3 {
-    min-height: 60px;
+.talk-meta {
+    color: #8b94a7;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
 }
 
-.card-content p {
+.talk-meta strong {
     color: #c4c8d4;
-    flex: 1;
+}
+
+.talk-meta a {
+    color: #00d9ff;
+    border-bottom: 1px solid rgba(0,217,255,.3);
+}
+
+.talk-meta a:hover {
+    color: #7deeff;
 }
 
 /* ==========================
@@ -393,17 +445,180 @@ h3 {
     color: #7deeff;
     transform: translateX(4px);
 }
+
 /* ==========================
-   THANKS
+   ТЕЗИСЫ — длинные тексты вне сетки карточек
 ========================== */
 
-.thanks-card {
+.thesis {
     background: #11151f;
     border: 1px solid #1d2330;
     border-radius: 32px;
     padding: 48px;
+    margin-bottom: 28px;
+}
+
+.thesis:last-child {
+    margin-bottom: 0;
+}
+
+.thesis h3 {
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.thesis p {
     color: #c4c8d4;
-    font-size: 20px;
+    margin-bottom: 18px;
+    max-width: 900px;
+}
+
+.thesis p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================
+   КОРПОРАТИВНЫЙ БЛОК
+========================== */
+
+.quote {
+    border-left: 3px solid #00d9ff;
+    padding: 4px 0 4px 24px;
+    margin: 28px 0 0;
+    color: #c4c8d4;
+    font-size: 19px;
+    max-width: 900px;
+}
+
+.quote cite {
+    display: block;
+    margin-top: 14px;
+    font-style: normal;
+    font-size: 14px;
+    color: #8b94a7;
+}
+
+/* ==========================
+   ДЛЯ ОРГАНИЗАТОРОВ
+========================== */
+
+.organizers-grid {
+    background: #11151f;
+    border: 1px solid #1d2330;
+    border-radius: 32px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 36px 50px;
+}
+
+.organizers-grid dt {
+    font-weight: 700;
+    color: #00d9ff;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.organizers-grid dd {
+    color: #c4c8d4;
+}
+
+.organizers-grid dd a {
+    color: #00d9ff;
+}
+
+.organizers-grid .item {
+    min-width: 0;
+}
+
+@media (max-width: 768px) {
+    .organizers-grid {
+        padding: 32px;
+    }
+}
+
+/* ==========================
+   СПИСОК ПУБЛИКАЦИЙ
+========================== */
+
+.plain-list {
+    list-style: none;
+    max-width: 900px;
+}
+
+.plain-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid #1d2330;
+    color: #8b94a7;
+}
+
+.plain-list li:first-child {
+    border-top: 1px solid #1d2330;
+}
+
+.plain-list a {
+    color: #00d9ff;
+    font-weight: 600;
+}
+
+.plain-list a:hover {
+    color: #7deeff;
+}
+
+/* ==========================
+   ABOUT
+========================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-card {
+    background: #11151f;
+    border: 1px solid #1d2330;
+    border-radius: 32px;
+    padding: 48px;
+}
+
+.about-card p {
+    color: #c4c8d4;
+    margin-bottom: 20px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+.topics {
+    list-style: none;
+}
+
+.topics li {
+    color: #c4c8d4;
+    margin-bottom: 20px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.topics li:last-child {
+    margin-bottom: 0;
+}
+
+.topics li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00d9ff;
 }
 
 /* ==========================
@@ -417,12 +632,25 @@ h3 {
     gap: 24px;
 }
 
+.badges figure {
+    margin: 0;
+}
+
 .badges img {
     border-radius: 24px;
+    width: 100%;
 }
 
 .badges img:hover {
     transform: scale(1.03);
+}
+
+.badges figcaption {
+    margin-top: 14px;
+    text-align: center;
+    color: #8b94a7;
+    font-size: 14px;
+    line-height: 1.45;
 }
 
 /* ==========================
@@ -434,20 +662,36 @@ footer {
     border-top: 1px solid #1d2330;
 }
 
+footer p {
+    color: #c4c8d4;
+    max-width: 800px;
+}
+
+footer p a {
+    color: #00d9ff;
+}
+
 .contacts-row {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    margin-top: 40px;
 }
 
 .contacts-row a {
     color: #00d9ff;
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .contacts-row a:hover {
     transform: translateY(-2px);
     color: #7deeff;
+}
+
+.footer-signature {
+    margin-top: 50px;
+    color: #4d5566 !important;
+    font-size: 14px;
 }
 
 /* ==========================
@@ -465,16 +709,20 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
     }
+
+    .stat {
+        flex: 1;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 900px) {
 
     nav {
         display: none;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
     }
 
     .cards {
@@ -484,12 +732,20 @@ footer {
     .card img {
         height: 220px;
     }
+
+    .thesis {
+        padding: 32px;
+    }
 }
 
 @media (max-width: 768px) {
 
     .section {
         padding: 70px 0;
+    }
+
+    .label {
+        white-space: normal;
     }
 
     .stats {
@@ -509,8 +765,11 @@ footer {
         gap: 20px;
     }
 
-    .about-card,
-    .thanks-card {
+    .about-card {
         padding: 32px;
+    }
+
+    .quote {
+        font-size: 17px;
     }
 }
