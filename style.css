@@ -1212,3 +1212,71 @@ footer p a {
         padding-left: 18px;
     }
 }
+
+/* ==========================================================
+   ГОРИЗОНТАЛЬНЫЕ КАРУСЕЛИ: доклады и бейджи
+   ========================================================== */
+
+.cards[data-carousel],
+.badges[data-carousel] {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px 4px 18px;
+    margin-bottom: 32px;
+    scrollbar-width: thin;
+    scrollbar-color: #2a3242 transparent;
+}
+
+.cards[data-carousel]::-webkit-scrollbar,
+.badges[data-carousel]::-webkit-scrollbar { height: 6px; }
+.cards[data-carousel]::-webkit-scrollbar-thumb,
+.badges[data-carousel]::-webkit-scrollbar-thumb { background: #2a3242; border-radius: 3px; }
+
+.cards[data-carousel] > .card {
+    flex: 0 0 min(380px, 85%);
+    height: auto;
+    scroll-snap-align: start;
+}
+
+.badges[data-carousel] > figure {
+    flex: 0 0 200px;
+    scroll-snap-align: start;
+}
+
+.badges[data-carousel] img {
+    height: 280px;
+    object-fit: contain;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: -8px 0 8px;
+}
+
+.carousel-nav button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2a3242;
+    background: transparent;
+    color: inherit;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background .2s, opacity .2s;
+}
+
+.carousel-nav button:hover { background: rgba(0,217,255,.12); }
+.carousel-nav button:disabled { opacity: .3; cursor: default; }
+
+@media (max-width: 700px) {
+    .carousel-nav { display: none; }
+    .badges[data-carousel] > figure { flex-basis: 160px; }
+    .badges[data-carousel] img { height: 220px; }
+}
+
