@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QC8YJLD4YS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QC8YJLD4YS');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Демиург цифровой команды: кто задаёт правила, когда часть работы делают агенты — доклад на AAA CONF 2026</title>
+
+  <meta name="description" content="Доклад Тараса Шевченко (MorliDots) на AAA CONF 2026, Ростов-на-Дону, 26 сентября. Политика выживания технического руководителя в эпоху AI: контроль входящей документации, «чёрная материя» сгенерированного результата и контроль выхода через метрики и агентов.">
+
+  <link rel="canonical" href="https://morlidots.ru/talk-demiurge.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Демиург цифровой команды — Тарас Шевченко, AAA CONF 2026">
+  <meta property="og:description" content="Кто задаёт правила, когда часть работы делают агенты. Политика выживания технического руководителя в эпоху AI.">
+  <meta property="og:url" content="https://morlidots.ru/talk-demiurge.html">
+  <meta property="og:image" content="https://morlidots.ru/images/demiurge.png">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "@id": "https://morlidots.ru/talk-demiurge.html#event",
+    "name": "Демиург цифровой команды: кто задаёт правила, когда часть работы делают агенты — политика выживания технического руководителя в эпоху AI",
+    "description": "Кто задаёт правила, когда часть работы делают агенты: контроль входа, чёрная материя AI-результата, контроль выхода через метрики. Что остаётся техническому руководителю.",
+    "startDate": "2026-09-26T16:25:00+03:00",
+    "endDate": "2026-09-26T17:05:00+03:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Hyatt Regency, Ростов-на-Дону",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Большая Садовая, 121",
+        "addressLocality": "Ростов-на-Дону",
+        "addressCountry": "RU"
+      }
+    },
+    "performer": {
+      "@id": "https://morlidots.ru/#person"
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "AAA CONF",
+      "url": "https://aaa.events/"
+    },
+    "url": "https://morlidots.ru/talk-demiurge.html",
+    "sameAs": "https://aaa.events/",
+    "image": "https://morlidots.ru/images/demiurge.png"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Тарас Шевченко (MorliDots)",
+        "item": "https://morlidots.ru/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Доклады",
+        "item": "https://morlidots.ru/#talks"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Демиург цифровой команды"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110468772', 'ym');
+    ym(110468772, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110468772" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <div class="name"><a href="./index.html">ТАРАС ШЕВЧЕНКО · MORLIDOTS</a></div>
+      <div class="role">Главный системный аналитик AI-платформы • Спикер</div>
+    </div>
+
+    <nav>
+      <a href="./index.html#history">Выступления</a>
+      <a href="./index.html#talks">Доклады</a>
+      <a href="./index.html#organizers">Организаторам</a>
+      <a href="./index.html#about">Обо мне</a>
+      <a href="./index.html#contacts">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+
+<section class="talk-hero">
+  <div class="container">
+
+    <div class="breadcrumb">
+      <a href="./index.html">Главная</a> → <a href="./index.html#talks">Доклады</a> → Демиург цифровой команды
+    </div>
+
+    <h1>Демиург цифровой команды</h1>
+
+    <div class="tagline">Кто задаёт правила, когда часть работы делают агенты — политика выживания технического руководителя в эпоху AI</div>
+
+    <ul class="talk-facts">
+      <li>AAA CONF 2026</li>
+      <li>Ростов-на-Дону, 26 сентября 2026</li>
+      <li>Трек «Разработка»</li>
+      <li>Доклад, 40 минут</li>
+    </ul>
+
+    <a class="video-cta" href="https://aaa.events/" target="_blank" rel="noopener">
+      Программа конференции
+    </a>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <div class="summary">
+      <h2>О чём этот доклад</h2>
+
+      <p>
+        Когда часть работы в команде делают агенты, меняется не скорость, а вопрос власти:
+        кто устанавливает правила, по которым работа считается сделанной. Раньше технический
+        руководитель мог прочитать результат и принять решение. Сгенерированного кода и документов
+        становится столько, что прочитать их целиком уже нельзя.
+      </p>
+
+      <p>
+        Доклад разбирает, где в такой команде остаётся точка контроля. На входе — формализованная
+        документация и критерии приёмки: без них агент выполняет не задачу, а свою догадку о ней.
+        Посередине — «чёрная материя»: результат, который никто не читает. На выходе — контроль через
+        метрики и других агентов вместо ручного ревью.
+      </p>
+
+      <p>
+        Отдельно — спор, который сейчас идёт в индустрии: можно ли доверять результату, если его
+        не читал человек, и где при этом проходит граница ответственности руководителя.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section dark">
+  <div class="container">
+
+    <h2>Что разбирается в докладе</h2>
+
+    <ul class="topics" style="max-width:900px">
+      <li><strong>Правила вместо контроля.</strong> Роль технического руководителя смещается от проверки результата к проектированию правил, по которым результат проверяется.</li>
+      <li><strong>Контроль входа.</strong> Формализованная документация и проверяемые критерии приёмки как условие, без которого агенту нечего выполнять.</li>
+      <li><strong>Чёрная материя AI.</strong> Результат, который уже никто не читает целиком, и что с этим делать команде.</li>
+      <li><strong>Контроль выхода.</strong> Метрики вместо чтения: покрытие тестами, сложность, размер модулей, мутационное тестирование — и агенты, которые их проверяют.</li>
+      <li><strong>Где граница ответственности.</strong> Что нельзя отдать агентам и за что руководитель отвечает, даже если сам ничего не писал и не читал.</li>
+    </ul>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+
+    <h2>Материалы по теме</h2>
+
+    <ul class="plain-list">
+      <li><a href="./articles/nalog-na-kontekst.html">Налог на разорванный контекст: почему AI-агенты не ускоряют разработку сами по себе</a> — статья</li>
+      <li><a href="./articles/pyat-voprosov-ai-agenty.html">Пять вопросов команде перед внедрением AI-агентов</a> — статья</li>
+      <li><a href="https://stepik.org/a/297807" target="_blank" rel="noopener">«Формализация как суперсила: как подготовить команду к AI-агентам»</a> — онлайн-курс на Stepik</li>
+      <li><a href="./index.html#talk-copilot">После Copilot</a> — соседний доклад о том, как меняется команда, когда AI становится участником delivery</li>
+      <li><a href="https://aaa.events/" target="_blank" rel="noopener">Программа AAA CONF 2026</a></li>
+    </ul>
+
+  </div>
+</section>
+
+
+<footer id="contacts">
+  <div class="container">
+
+    <h2>Пригласить на выступление</h2>
+
+    <p>
+      Доклад можно привезти на вашу конференцию, внутренний митап или в корпоративный формат для
+      технических руководителей: <a href="mailto:morli_dots@mail.ru">morli_dots@mail.ru</a>
+    </p>
+
+    <div class="contacts-row">
+      <a href="./index.html">На главную</a>
+      <a href="./index.html#organizers">Для организаторов</a>
+      <a href="https://t.me/AnalystsMind" target="_blank" rel="noopener">Telegram — «Разум аналитика»</a>
+      <a href="https://analystdays.ru/ru/profile/106538" target="_blank" rel="noopener">Analyst Days</a>
+      <a href="https://getmentor.dev/mentor/taras--shevchenko-7233" target="_blank" rel="noopener">GetMentor</a>
+    </div>
+
+    <p class="footer-signature">
+      Тарас Шевченко · MorliDots · Краснодар · morlidots.ru
+    </p>
+
+  </div>
+</footer>
+
+</body>
+</html>
