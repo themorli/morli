@@ -1280,3 +1280,115 @@ footer p a {
     .badges[data-carousel] img { height: 220px; }
 }
 
+/* ==========================================================
+   «ГДЕ ВЫСТУПАЛ» ПЛИТКАМИ
+   ========================================================== */
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    border-top: 0;
+}
+
+.timeline li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 24px;
+    background: #11151f;
+    border: 1px solid #1d2330;
+    border-radius: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.timeline .when {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.timeline li.is-hidden { display: none; }
+
+.timeline-more {
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: 1px solid #2a3242;
+    background: transparent;
+    color: #00d9ff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.timeline-more:hover { background: rgba(0,217,255,.08); }
+
+@media (max-width: 700px) {
+    .timeline { grid-template-columns: 1fr; }
+    .timeline li { padding: 18px 20px; }
+}
+
+/* ==========================================================
+   ТЕЗИСЫ: свёрнуты до заголовка, раскрываются по клику
+   ========================================================== */
+
+details.thesis {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+details.thesis > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 28px 72px 28px 36px;
+    position: relative;
+}
+
+details.thesis > summary::-webkit-details-marker { display: none; }
+
+details.thesis > summary::after {
+    content: "+";
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #2a3242;
+    color: #00d9ff;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    transition: transform .2s;
+}
+
+details.thesis[open] > summary::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+details.thesis > summary h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+details.thesis > summary .talk-meta { margin-bottom: 0; }
+
+details.thesis > :not(summary) {
+    margin-left: 36px;
+    margin-right: 36px;
+}
+
+details.thesis > :last-child { margin-bottom: 32px; }
+
+details.thesis > summary:hover h3 { color: #7deeff; }
+
+@media (max-width: 700px) {
+    details.thesis > summary { padding: 22px 60px 22px 22px; }
+    details.thesis > summary::after { right: 18px; }
+    details.thesis > :not(summary) { margin-left: 22px; margin-right: 22px; }
+    details.thesis > summary h3 { font-size: 18px; }
+}
+
