@@ -1,0 +1,15 @@
+# Бэкапы и временные файлы
+*.bak
+*.tmp
+*.swp
+*~
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Локальные настройки редакторов
+.vscode/
+.idea/
+*.code-workspace
